@@ -9,6 +9,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="venue">VENUE:- SEMINAR HALL(804)</string>
+    <string name="desc">GitHub, Inc. is an Internet hosting service for software development and versioncontrol using Git. It provides the distributed version control of Git plus access control,bug tracking,software feature requests, task management, continuous integration, and wikis for every project.The main purpose of GitHub.com is to facilitate the version control and issue tracking aspects of software development. Labels, milestones, responsibility assignment, and a search engine are available for issue tracking. </string>
     <string name="login">LOGIN</string>
     <string name="create_new_account">Create new account?</string>
     <string name="register">Register</string>
