@@ -19,7 +19,7 @@ class RegistrationActivity: AppCompatActivity() {
     private lateinit var user_re_password_box: EditText
 
     private lateinit var register_button: Button
-    private lateinit var account_exists:Button
+    private lateinit var account_exists:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

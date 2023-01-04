@@ -13,6 +13,7 @@ private  lateinit var newRecyclerView: RecyclerView
 private  lateinit var newArrayList: ArrayList<ProfileEvents>
 lateinit var title_Heading : ArrayList<String>
 lateinit var Description : ArrayList<String>
+
 class Profile: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

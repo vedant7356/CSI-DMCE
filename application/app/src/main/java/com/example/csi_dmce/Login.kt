@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
-import androidx.room.Room
-
 
 class Login: AppCompatActivity() {
     private lateinit var login_email: EditText
@@ -15,14 +14,22 @@ class Login: AppCompatActivity() {
     private lateinit var login_button: Button
     private lateinit var without_account:Button
 
+    private lateinit var tv_forgot_password: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         login_email = findViewById(R.id.editTextTextEmailAddress)
         login_password = findViewById(R.id.editTextTextPassword)
         login_button=findViewById(R.id.loginb)
         without_account=findViewById(R.id.woacc)
+        tv_forgot_password = findViewById(R.id.tv_forgot_password)
+
+        tv_forgot_password.setOnClickListener{
+            val intent = Intent(this, ForgotPassword::class.java)
+            startActivity(intent)
+        }
 
         login_button.setOnClickListener {
             var log_email: String = login_email.text.toString()
@@ -55,7 +62,7 @@ class Login: AppCompatActivity() {
 
         }
         without_account.setOnClickListener{
-            val intent = Intent(this, event_page::class.java)
+            val intent = Intent(this, Dashboard::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             Intent.FLAG_ACTIVITY_NEW_TASK
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)

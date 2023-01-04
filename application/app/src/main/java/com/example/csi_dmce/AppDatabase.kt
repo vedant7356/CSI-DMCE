@@ -10,10 +10,8 @@ import androidx.room.RoomDatabase
 abstract class AppDatabase: RoomDatabase() {
     abstract fun userDao(): UserDAO
     companion object {
-
         @Volatile
         private var INSTANCE: AppDatabase? = null
-
 
         fun getInstance(context: Context): AppDatabase {
             synchronized(this) {
@@ -27,8 +25,8 @@ abstract class AppDatabase: RoomDatabase() {
                         "csi-dmce"
                     )
                         .fallbackToDestructiveMigration()
+                        .allowMainThreadQueries()
                         .build()
-
                     INSTANCE = instance
                 }
                 return instance
