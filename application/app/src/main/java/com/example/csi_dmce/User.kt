@@ -8,18 +8,17 @@ import androidx.room.PrimaryKey
 @Entity
 data class User(
     @PrimaryKey
-    val user_id: Int = 0,
+    var user_id: Int = 0,
 
     @ColumnInfo(name = "name")
-    val name: String = "",
+    var name: String = "",
 
     @ColumnInfo(name = "email")
-    val email: String = "",
+    var email: String = "",
 
     @ColumnInfo(name = "password_hash")
-    val password_hash: String = "",
+    var password_hash: String = "",
 
     @Ignore
-    val otp: Int = 0,
-
+    var otp: Int = 0,
 )

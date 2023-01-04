@@ -32,6 +32,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.example.csi_dmce'
 }
 
 apply plugin: 'kotlin-kapt'
