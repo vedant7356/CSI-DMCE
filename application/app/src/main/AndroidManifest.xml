@@ -14,7 +14,7 @@
         android:theme="@style/Theme.CSIDMCE"
         tools:targetApi="31">
         <activity
-            android:name=".event_items"
+            android:name=".edit_profile"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
