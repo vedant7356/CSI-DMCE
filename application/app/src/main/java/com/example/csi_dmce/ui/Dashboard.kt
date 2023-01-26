@@ -1,9 +1,14 @@
-package com.example.csi_dmce
+package com.example.csi_dmce.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.csi_dmce.R
+import com.example.csi_dmce.auth.CsiAuthWrapper
+import com.example.csi_dmce.events.EventPageActivity
+import com.example.csi_dmce.profile.Profile
+
 
 class Dashboard: AppCompatActivity() {
     private lateinit var btn_registration: Button
@@ -11,22 +16,11 @@ class Dashboard: AppCompatActivity() {
     private lateinit var btn_profile: Button
     private lateinit var btn_events: Button
     private lateinit var btn_calendar: Button
+    private lateinit var btn_logout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
-
-        btn_registration = findViewById(R.id.btn_dashboard_register)
-        btn_registration.setOnClickListener {
-            val eventIntent = Intent(this, RegistrationActivity::class.java)
-            startActivity(eventIntent)
-        }
-
-        btn_login = findViewById(R.id.btn_dashboard_login)
-        btn_login.setOnClickListener {
-            val eventIntent = Intent(this, Login::class.java)
-            startActivity(eventIntent)
-        }
 
         btn_profile = findViewById(R.id.btn_dashboard_profile)
         btn_profile.setOnClickListener {
@@ -36,14 +30,16 @@ class Dashboard: AppCompatActivity() {
 
         btn_events = findViewById(R.id.btn_dashboard_events)
         btn_events.setOnClickListener {
-            val eventIntent = Intent(this, event_recycler::class.java)
+            val eventIntent = Intent(this, EventPageActivity::class.java)
             startActivity(eventIntent)
         }
 
-        btn_calendar = findViewById(R.id.btn_dashboard_calendar)
-        btn_calendar.setOnClickListener {
-            val eventIntent = Intent(this, CSICalendar::class.java)
-            startActivity(eventIntent)
+        btn_logout = findViewById(R.id.btn_dashboard_logout)
+        btn_logout.setOnClickListener {
+            CsiAuthWrapper.deleteAuthToken(applicationContext)
+            val intent = Intent(applicationContext, WelcomeActivity::class.java)
+            finishAffinity()
+            startActivity(intent)
         }
     }
 }

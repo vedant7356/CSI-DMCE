@@ -1,12 +1,13 @@
-package com.example.csi_dmce
+package com.example.csi_dmce.events
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.csi_dmce.R
 
-class event_page : AppCompatActivity() {
+class EventPageActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

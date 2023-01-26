@@ -1,12 +1,11 @@
-package com.example.csi_dmce
+package com.example.csi_dmce.events
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.security.identity.AccessControlProfileId
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.csi_dmce.R
 
 class event_recycler : AppCompatActivity() {
 
@@ -166,7 +165,7 @@ class event_recycler : AppCompatActivity() {
 
                 //Toast.makeText(this@event_recycler,"next",Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this@event_recycler,event_page::class.java)
+                val intent = Intent(this@event_recycler,EventPageActivity::class.java)
                 intent.putExtra("heading",newArrayList[position].eventname)
                 intent.putExtra("imageId",newArrayList[position].titleimage)
                 intent.putExtra("venue",venue[position])

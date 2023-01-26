@@ -36,6 +36,7 @@ android {
 }
 
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlinx-serialization'
 dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -52,8 +53,18 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation "androidx.cardview:cardview:1.0.0"
 
-    // Room
-    def room_version = "2.4.3"
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+
+    // Firebase dependencies:
+    implementation "com.google.firebase:firebase-firestore:24.4.2"
+    implementation "com.google.firebase:firebase-firestore-ktx:24.4.2"
+
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
+
+    // For serialization
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1'
+
+    // For JWT authorization
+    implementation 'com.auth0:java-jwt:4.2.2'
 }
+apply plugin: 'com.google.gms.google-services'
