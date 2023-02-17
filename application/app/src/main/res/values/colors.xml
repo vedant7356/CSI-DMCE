@@ -14,4 +14,6 @@
     <color name="perfectgrey">#6C6868</color>
     <color name="green">#108E16</color>
     <color name="blue">#0066FF</color>
+    <color name="smokyWhite">#fafafa</color>
+    <color name="colorRed">#C11515</color>
 </resources>
